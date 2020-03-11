@@ -5,7 +5,7 @@ const mysql = require("mysql")
 const app = express();
 const PORT = 1024
 
-app.use(express.urlendcoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.engine("handlebars", exphbs({ defaultlayout: "main"}));
@@ -16,13 +16,23 @@ const connection = mysql.createConnection({
     port: 3306, 
     user: "root", 
     password: "rootroot", 
-    database: burger_db
+    database: "burger_db"
 })
 
 connection.connect(function(err) {
     if (err) throw err;
 
     console.log("connected")
+})
+
+app.get("/", function(req, res) {
+    connection.query("SELECT * FROM burger", function(err, data) {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        res.render("index", {burgers: data});
+    })
 })
 
 app.listen(PORT, function() {

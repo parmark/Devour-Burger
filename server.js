@@ -49,6 +49,16 @@ app.post("/api/burgers", function(req, res) {
     })
 })
 
+app.put("/api/burgers/:id", function(req, res) {
+    connection.query(`UPDATE burger SET devoured = true WHERE id = ?`, [req.params.id], function(err, result) {
+        if (err) {
+            return res.status(500).end();
+        }
+
+        res.status(200).end();
+    })
+})
+
 app.listen(PORT, function() {
     console.log("Server listening...")
 })

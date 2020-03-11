@@ -20,7 +20,7 @@
                                 <p>{{burger}}</p>
                             </div>
                             <div class="card-action center-align">
-                                <button class="btn devour">DEVOUR</button>
+                                <button class="btn devour" data-burgerid={{id}}>DEVOUR</button>
                             </div>
                         </div>
                     </div>
@@ -68,5 +68,13 @@
     })
 
     // devour button
-    
+    $(".devour").on("click", function(event) {
+
+        $.ajax("/api/burgers/" + $(this).data("burgerid"), {
+            type: "PUT"
+        }).then(function() {
+            location.reload()
+        }
+        )
+    })
 </script>

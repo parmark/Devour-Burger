@@ -11,15 +11,15 @@
 
     {{!-- Added Burger column and Eaten Burger column --}}
     <div class="row">
-        <div id="addedBurgers" class="col">
+        <div id="addedBurgers" class="col s3 offset-s3">
             {{#each burgers}}
                 <div class="row">
                     <div class="card horizontal">
-                        <div class="card-stacked">
+                        <div class="card-stacked center-align">
                             <div class="card-content">
                                 <p>{{burger}}</p>
                             </div>
-                            <div class="card-action center-align">
+                            <div class="card-action">
                                 <button class="btn devour" data-burgerid={{id}}>DEVOUR</button>
                             </div>
                         </div>
@@ -28,9 +28,9 @@
             {{/each}}
         </div>
 
-        <div id="devouredBurgers" class="col right s4">
+        <div id="devouredBurgers" class="col s3 offset-s1">
             {{#each devouredBurgers}}
-                <div class="row">
+                <div class="row center-align">
                     <div class="card-panel">{{burger}}</div>
                 </div>
             {{/each}}

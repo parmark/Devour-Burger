@@ -5,16 +5,43 @@
     </div>
 
     {{!-- Page Title --}}
-    <div class="row"></div>
+    <div class="row">
+        <h3 class="center-align red-text text-darken-2">Eat-Da-Burger!</h3>
+    </div>
 
     {{!-- Added Burger column and Eaten Burger column --}}
-    <div class="row"></div>
+    <div class="row">
+        <div id="addedBurgers" class="col">
+            {{#each burgers}}
+                <div class="row">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <p>{{burger}}</p>
+                            </div>
+                            <div class="card-action center-align">
+                                <button class="btn">DEVOUR</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+        <div id="devouredBurgers" class="col right s4">
+            <div class="row">
+                <div class="card-panel">Juicy Lucy</div>
+            </div>
+        </div>
+    </div>
 
     {{!-- Text area --}}
     <div class="row"></div>
 
     {{!-- Submit Button --}}
-    <div class="row"></div>
+    <div class="row center-align">
+        <button class="btn white red-text">SUBMIT</button>
+    </div>
 
 
     <div class="row"></div>

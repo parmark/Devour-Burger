@@ -31,7 +31,10 @@ app.get("/", function(req, res) {
             return res.status(500).end();
         }
 
-        res.render("index", {burgers: data});
+        const devouredBurgers = data.filter(burger => burger.devoured === 1);
+        const burgers = data.filter(burger => burger.devoured === 0);
+
+        res.render("index", {burgers: burgers, devouredBurgers: devouredBurgers});
     })
 })
 

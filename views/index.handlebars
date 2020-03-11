@@ -20,7 +20,7 @@
                                 <p>{{burger}}</p>
                             </div>
                             <div class="card-action center-align">
-                                <button class="btn">DEVOUR</button>
+                                <button class="btn devour">DEVOUR</button>
                             </div>
                         </div>
                     </div>
@@ -38,13 +38,35 @@
     </div>
 
     {{!-- Text area --}}
-    <div class="row"></div>
+    <div class="row center-align">
+        <div class="input-field">
+            <input placeholder="Add a burger!" id="newBurger" name="burger" type="text">
+        </div>
+    </div>
 
     {{!-- Submit Button --}}
     <div class="row center-align">
-        <button class="btn white red-text">SUBMIT</button>
+        <button id="submit" class="btn white red-text">SUBMIT</button>
     </div>
 
 
     <div class="row"></div>
 </div>
+
+<script>
+    // submit button
+    $("#submit").on("click", function(event) {
+        console.log($("#newBurger").val())
+
+        $.ajax("/api/burgers", {
+            type: "POST", 
+            data: {burger: $("#newBurger").val()} 
+        }).then(function() {
+            console.log("added new burger");
+            location.reload()
+        })
+    })
+
+    // devour button
+    
+</script>

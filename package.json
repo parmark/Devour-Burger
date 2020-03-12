@@ -1,0 +1,20 @@
+{
+  "name": "devour-burger",
+  "version": "1.0.0",
+  "description": "A burger logger",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/parmark/Devour-Burger.git"
+  },
+  "author": "Kevin Parmar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parmark/Devour-Burger/issues"
+  },
+  "homepage": "https://github.com/parmark/Devour-Burger#readme"
+}
